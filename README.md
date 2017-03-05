@@ -22,7 +22,7 @@ To build and use `markdown-to-ipynb`:
 1. Convert an example Markdown file:
 
    ```bash
-   GOPATH/bin/markdown-to-ipynb example.md > example.ipynb
+   $GOPATH/bin/markdown-to-ipynb example.md > example.ipynb
    ```
 
 1. (Optionally) view the Notebook file:
