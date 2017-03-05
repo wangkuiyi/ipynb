@@ -1,7 +1,8 @@
 `ipynb` is a Go package for
 reading/writing
 [Jupyter Notebook files](http://ipython.org/ipython-doc/3/notebook/nbformat.html).
-The document is [here](https://godoc.org/github.com/wangkuiyi/ipynb).
+The document is
+at [here](https://godoc.org/github.com/wangkuiyi/ipynb).
 
 `markdown-to-ipynb` is a command line tool that converts Markdown
 files (`.md`) into Jupyter Notebooks using `ipynb`.
@@ -30,3 +31,7 @@ To build and use `markdown-to-ipynb`:
    ```bash
    jupyter notebook example.ipynb
    ```
+
+The example Markdown file is
+at [here](markdown-to-ipynb/testdata/example.md), and the converted
+Notebook file is at [here](markdown-to-ipynb/testdata/example.ipynb).
