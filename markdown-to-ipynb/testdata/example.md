@@ -19,11 +19,7 @@ $$E=mc^2$$
 ## Figures
 It also contains a figure
 
-<p align=center>
-<img src="figure.png" width=150/>
-<br>
-Figure 1. Some funny things.
-</p>
+![](figure.png)
 
 ## Code and Non-code Verbatium
 It contains Markdown verbatum sections:
