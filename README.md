@@ -17,13 +17,13 @@ To build and use `markdown-to-ipynb`:
 
    ```bash
    export GOPATH=...any where you like...
-   go get -u github.com/wangkuiyi/ipynb/markdown-to-ipynb`
+   go get -u github.com/wangkuiyi/ipynb/markdown-to-ipynb
    ```
 
 1. Convert an example Markdown file:
 
    ```bash
-   $GOPATH/bin/markdown-to-ipynb example.md > example.ipynb
+   $GOPATH/bin/markdown-to-ipynb < example.md > example.ipynb
    ```
 
 1. (Optionally) view the Notebook file:
