@@ -3,6 +3,7 @@ package main
 import (
 	"bufio"
 	"encoding/json"
+	"flag"
 	"fmt"
 	"os"
 	"strings"
@@ -11,7 +12,17 @@ import (
 	"github.com/wangkuiyi/ipynb"
 )
 
+func isCodeBlock(line string, codeBlockType string) bool {
+	if strings.HasPrefix(strings.TrimSpace(line), fmt.Sprintf("```%s", codeBlockType)) {
+		return true
+	}
+	return false
+}
+
 func main() {
+	codeBlockType := flag.String("code-block-type", "python", "the code block type which used to generate code block in ipynb.")
+	flag.Parse()
+
 	nb := ipynb.New()
 	c := nb.AddCell(ipynb.Markdown)
 
@@ -19,7 +30,7 @@ func main() {
 	for scanner.Scan() {
 		line := scanner.Text()
 
-		if c.CellType == ipynb.Markdown && strings.HasPrefix(strings.TrimSpace(line), "```python") {
+		if c.CellType == ipynb.Markdown && isCodeBlock(line, *codeBlockType) {
 			c = nb.AddCell(ipynb.Code)
 		} else if c.CellType == ipynb.Code && strings.HasPrefix(strings.TrimSpace(line), "```") {
 			c = nb.AddCell(ipynb.Markdown)
